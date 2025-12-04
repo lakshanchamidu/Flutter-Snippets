@@ -33,7 +33,6 @@ class _LoginScreen extends State<LoginPage> {
                   SizedBox(
                     width: 250,
                     child: TextField(
-                      obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Username',
