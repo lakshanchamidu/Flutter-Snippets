@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'claculator.dart';
+import 'foodApp.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget{
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: FoodApp(),
     );
   }
 }
