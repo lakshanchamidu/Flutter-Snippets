@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'error-page2.dart';
+import 'SplashScreen.dart';
 
 void main () => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext conetxt){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ErrorPage2(),
+      home: SplashScreen(),
     );
   }
 }
