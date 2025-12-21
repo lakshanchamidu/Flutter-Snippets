@@ -8,11 +8,33 @@ while true; do
   if git diff --cached --quiet; then
     echo "$(date): No changes to commit"
   else
-    DATE=$(date +"%Y-%m-%d %H:%M:%S")
-    git commit -m "Auto commit - Flutter update ($DATE)"
+    # Get staged diff
+    DIFF=$(git diff --cached)
+
+    # Generate AI commit message using OpenAI API
+    COMMIT_MSG=$(curl -s https://api.openai.com/v1/chat/completions \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer $OPENAI_API_KEY" \
+      -d "{
+        \"model\": \"gpt-4\",
+        \"messages\": [
+          {\"role\": \"system\", \"content\": \"You are an expert software developer who writes concise Git commit messages.\"},
+          {\"role\": \"user\", \"content\": \"Generate a concise git commit message for these changes:\n$DIFF\"}
+        ],
+        \"max_tokens\": 50
+      }" | jq -r '.choices[0].message.content')
+
+    # Fallback if AI fails
+    if [ -z "$COMMIT_MSG" ]; then
+      COMMIT_MSG="Auto commit - minor changes"
+    fi
+
+    # Commit and push
+    git commit -m "$COMMIT_MSG"
     git push origin main
-    echo "$(date): Changes committed and pushed"
+
+    echo "$(date): Changes committed and pushed with message: $COMMIT_MSG"
   fi
 
-  sleep 1800  # 300 seconds = 5 minutes
+  sleep 1800  # 30 minutes
 done

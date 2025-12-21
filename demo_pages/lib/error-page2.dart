@@ -77,7 +77,7 @@ class _ErrorPage2 extends State<ErrorPage2> {
               child: Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.amber[600],
+                  color: Colors.amber[500],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
