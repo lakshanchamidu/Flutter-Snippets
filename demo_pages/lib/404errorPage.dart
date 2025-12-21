@@ -12,6 +12,7 @@ class _ErrorPage extends State<ErrorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         actions: [
           IconButton(
@@ -44,33 +45,75 @@ class _ErrorPage extends State<ErrorPage> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 12, right: 10, top: 80),
+              padding: EdgeInsets.only(left: 12, right: 10, top: 60),
               child: Lottie.asset('lib/assests/error_screen.json'),
             ),
+            SizedBox(height: 30),
             Column(
               children: [
                 Text(
                   "Page Not Found",
                   style: TextStyle(
-                    fontSize: 33,
+                    fontSize: 36,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.2,
+                    color: Colors.black87,
                   ),
                 ),
-                Text(
-                  "Check your connection.",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.1,
+                SizedBox(height: 10),
+                Container(
+                  width: 60,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    borderRadius: BorderRadius.circular(2),
                   ),
                 ),
-                Text(
-                  "Reload the page.",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    letterSpacing: 1.1,
+                SizedBox(height: 30),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.wifi_off_rounded,
+                            color: Colors.grey[700],
+                            size: 24,
+                          ),
+                          SizedBox(width: 15),
+                          Text(
+                            "Check your connection.",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.5,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.refresh_rounded,
+                            color: Colors.grey[700],
+                            size: 24,
+                          ),
+                          SizedBox(width: 15),
+                          Text(
+                            "Reload the page.",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                              letterSpacing: 0.5,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
