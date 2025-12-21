@@ -1,10 +1,18 @@
 #!/bin/bash
 
+# Make sure OPENAI_API_KEY is set
+if [ -z "$OPENAI_API_KEY" ]; then
+  echo "Error: OPENAI_API_KEY not set."
+  exit 1
+fi
+
 while true; do
   cd "$(dirname "$0")"
 
+  # Stage all changes
   git add .
 
+  # Check for staged changes
   if git diff --cached --quiet; then
     echo "$(date): No changes to commit"
   else
@@ -29,12 +37,13 @@ while true; do
       COMMIT_MSG="Auto commit - minor changes"
     fi
 
-    # Commit and push
+    # Commit & push
     git commit -m "$COMMIT_MSG"
     git push origin main
 
     echo "$(date): Changes committed and pushed with message: $COMMIT_MSG"
   fi
 
-  sleep 1800  # 30 minutes
+  # Wait 30 minutes
+  sleep 1800
 done
