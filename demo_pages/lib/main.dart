@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '404errorPage.dart';
+import 'error-page2.dart';
 
 void main () => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext conetxt){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ErrorPage(),
+      home: ErrorPage2(),
     );
   }
 }
