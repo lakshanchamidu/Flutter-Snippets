@@ -12,6 +12,7 @@ class LoginPage1 extends StatefulWidget {
 class _LoginPage1 extends State<LoginPage1> {
   String _selectedValue = "En";
   List<String> language = ["En", "සිං", "தமி"];
+  bool _obsureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -133,6 +134,7 @@ class _LoginPage1 extends State<LoginPage1> {
                 ),
                 SizedBox(height: 20),
                 TextField(
+                  obscureText: _obsureText,
                   decoration: InputDecoration(
                     hintText: "Password",
                     hintStyle: TextStyle(
@@ -144,6 +146,19 @@ class _LoginPage1 extends State<LoginPage1> {
                       Icons.lock_outline,
                       color: Colors.grey[800],
                     ),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _obsureText = !_obsureText;
+                        });
+                      },
+                      icon: Icon(
+                        _obsureText
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                    ),
+
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1.5),
                     ),
@@ -211,7 +226,7 @@ class _LoginPage1 extends State<LoginPage1> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
