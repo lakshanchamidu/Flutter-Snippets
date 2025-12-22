@@ -8,9 +8,34 @@ class SplashScreen2 extends StatefulWidget {
   State<SplashScreen2> createState() => _SplashScreen2();
 }
 
-class _SplashScreen2 extends State<SplashScreen2> {
+class _SplashScreen2 extends State<SplashScreen2>
+    with SingleTickerProviderStateMixin {
   String selectedValue = "En";
   List<String> languages = ['En', 'සිං', 'தமி'];
+  late AnimationController _controller;
+  late Animation<double> _arrowAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _arrowAnimation = Tween<double>(
+      begin: 0,
+      end: 15,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -142,14 +167,47 @@ class _SplashScreen2 extends State<SplashScreen2> {
               ),
             ),
           ),
-          SizedBox(height: 20),
-          
+          SizedBox(height: 70),
+          Row(
+            children: [
+              Text(
+                "Swipe to Start",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.1,
+                ),
+              ),
+              SizedBox(width: 30),
+              AnimatedBuilder(
+                animation: _arrowAnimation,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(0, _arrowAnimation.value),
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  );
+                },
+              ),
+
+              
+              
+            ],
+          ),
           const Spacer(),
           Padding(
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               "Powered by Uber Eats",
-              style: TextStyle(fontSize: 10, color: Colors.white, letterSpacing: 1.05),
+              style: TextStyle(
+                fontSize: 10,
+                color: Colors.white,
+                letterSpacing: 1.05,
+              ),
             ),
           ),
         ],
