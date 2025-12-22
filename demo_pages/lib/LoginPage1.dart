@@ -163,20 +163,29 @@ class _LoginPage1 extends State<LoginPage1> {
                     minimumSize: Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      
-                    )
+                    ),
                   ),
-                  
+
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: const Text("Login Successfully.")),
                     );
                   },
-                  child: const Text("Log In",style: TextStyle(
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 23
-                  ),),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Log In",
+                        style: TextStyle(
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
+                        ),
+                      ),
+                      SizedBox(width: 10,),
+                      Icon(Icons.arrow_forward_ios_outlined)
+                    ],
+                  ),
                 ),
               ],
             ),
