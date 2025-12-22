@@ -65,6 +65,7 @@ flutter:
     - lib/assests/Lonely_404.json
     - lib/assests/Food_Courier.json
     - lib/assests/Delivery_guy.json
+    - lib/assests/Cat_Movement.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
