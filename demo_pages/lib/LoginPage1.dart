@@ -91,13 +91,59 @@ class _LoginPage1 extends State<LoginPage1> {
             child: Lottie.asset('lib/assests/Cat_Movement.json'),
           ),
 
-          SizedBox(height: 15,),
-          Text("Log In", style: GoogleFonts.outfit(
-            color: Colors.deepOrange,
-            fontWeight: FontWeight.bold,
-            fontSize: 35,
-            letterSpacing: 1.2
-          ),),
+          SizedBox(height: 15),
+          Text(
+            "Log In",
+            style: GoogleFonts.outfit(
+              color: Colors.deepOrange,
+              fontWeight: FontWeight.bold,
+              fontSize: 35,
+              letterSpacing: 1.2,
+            ),
+          ),
+          SizedBox(height: 30),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Email",
+                    prefixIcon: Icon(Icons.mail_outline),
+                    hintStyle: TextStyle(
+                      color: Colors.grey[800],
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 1.5),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.deepOrange,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.lock_outline),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 1.5),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.deepOrange,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
 
           const Spacer(),
           Container(
