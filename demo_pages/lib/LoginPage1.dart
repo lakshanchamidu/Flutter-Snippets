@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class LoginPage1 extends StatefulWidget {
@@ -89,6 +90,14 @@ class _LoginPage1 extends State<LoginPage1> {
             padding: EdgeInsets.only(top: 40),
             child: Lottie.asset('lib/assests/Cat_Movement.json'),
           ),
+
+          SizedBox(height: 20,),
+          Text("Log In", style: GoogleFonts.inter(
+            color: Colors.deepOrange,
+            fontWeight: FontWeight.bold,
+            fontSize: 33,
+            letterSpacing: 1.2
+          ),),
 
           const Spacer(),
           Container(
