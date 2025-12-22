@@ -87,35 +87,46 @@ class _SplashScreen2 extends State<SplashScreen2> {
         ],
       ),
 
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.only(top: 50),
-            child: Lottie.asset('lib/assests/Food_Courier.json'),
-          ),
-          SizedBox(height: 40),
-          Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Text(
-              textAlign: TextAlign.center,
-              "Quick Cravings, Quicker Delivery.",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 32,
+      body: Container(
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 50),
+              child: Lottie.asset('lib/assests/Food_Courier.json'),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                textAlign: TextAlign.center,
+                "Quick Cravings, Quicker Delivery.",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 6),
-          Container(
-            width: 65,
-            height: 6,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(50),
+            SizedBox(height: 6),
+            Container(
+              width: 65,
+              height: 6,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(50),
+              ),
             ),
-          ),
-        ],
+
+            const Spacer(),
+            Padding(
+              padding: EdgeInsets.only(bottom: 25),
+              child: Text("Powered by Uber Eats", style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 1.05
+              ),),
+            ),
+          ],
+        ),
       ),
     );
   }
