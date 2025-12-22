@@ -116,7 +116,6 @@ class _SplashScreen2 extends State<SplashScreen2> {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-
             const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: 25),
