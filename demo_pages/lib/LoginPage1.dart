@@ -16,7 +16,9 @@ class _LoginPage1 extends State<LoginPage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 225, 220, 213),
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 225, 220, 213),
         title: Row(
           children: [
             Text(
@@ -109,7 +111,10 @@ class _LoginPage1 extends State<LoginPage1> {
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Email",
-                    prefixIcon: Icon(Icons.mail_outline),
+                    prefixIcon: Icon(
+                      Icons.mail_outline,
+                      color: Colors.grey[800],
+                    ),
                     hintStyle: TextStyle(
                       color: Colors.grey[800],
                       fontWeight: FontWeight.bold,
@@ -126,10 +131,19 @@ class _LoginPage1 extends State<LoginPage1> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Password",
-                    prefixIcon: Icon(Icons.lock_outline),
+                    hintStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                      color: Colors.grey[800],
+                    ),
+                    prefixIcon: Icon(
+                      Icons.lock_outline,
+                      color: Colors.grey[800],
+                    ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black, width: 1.5),
                     ),
@@ -141,6 +155,8 @@ class _LoginPage1 extends State<LoginPage1> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
+                ElevatedButton(onPressed: (){ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: const Text("Login Successfully.")))}, child: child)
               ],
             ),
           ),
