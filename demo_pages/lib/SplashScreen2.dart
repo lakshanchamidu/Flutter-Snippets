@@ -27,12 +27,15 @@ class _SplashScreen2 extends State<SplashScreen2> {
                 letterSpacing: 1.2,
               ),
             ),
-            Text("Eats", style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.green,
-              fontSize: 32,
-              letterSpacing: 1.2
-            ),)
+            Text(
+              "Eats",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+                fontSize: 32,
+                letterSpacing: 1.2,
+              ),
+            ),
           ],
         ),
         actions: <Widget>[
@@ -92,7 +95,7 @@ class _SplashScreen2 extends State<SplashScreen2> {
           ),
           SizedBox(height: 40),
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 10),
             child: Text(
               textAlign: TextAlign.center,
               "Quick Cravings, Quicker Delivery.",
@@ -103,7 +106,15 @@ class _SplashScreen2 extends State<SplashScreen2> {
               ),
             ),
           ),
-          SizedBox(height: 6,),
+          SizedBox(height: 6),
+          Container(
+            width: 65,
+            height: 6,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(50),
+            ),
+          ),
         ],
       ),
     );
