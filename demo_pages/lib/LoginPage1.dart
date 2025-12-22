@@ -187,15 +187,21 @@ class _LoginPage1 extends State<LoginPage1> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 10,),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Create New Account? ", style: TextStyle(
-                      fontSize: 30
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
                     ),),
                     GestureDetector(
                       onTap: (){},
-                      child: Text("Sign up"),
+                      child: Text("Sign up", style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue[800],
+                      ),),
                     )
                   ],
                 )
