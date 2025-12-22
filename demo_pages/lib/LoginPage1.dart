@@ -182,30 +182,42 @@ class _LoginPage1 extends State<LoginPage1> {
                           fontSize: 23,
                         ),
                       ),
-                      SizedBox(width: 10,),
-                      Icon(Icons.arrow_forward_ios_outlined)
+                      SizedBox(width: 10),
+                      Icon(Icons.arrow_forward_ios_outlined),
                     ],
                   ),
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Create New Account? ",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue[800],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 10,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Create New Account? ", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold
-                    ),),
-                    GestureDetector(
-                      onTap: (){},
-                      child: Text("Sign up", style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue[800],
-                      ),),
-                    )
+                    Image.asset('lib/assests/DemoApp1.png', height: 100),
                   ],
-                )
-
+                ),
               ],
             ),
           ),
@@ -242,9 +254,7 @@ class _LoginPage1 extends State<LoginPage1> {
                 ),
               ],
             ),
-            
           ),
-          
         ],
       ),
     );
