@@ -12,6 +12,7 @@ class _SplashScreen2 extends State<SplashScreen2>
     with SingleTickerProviderStateMixin {
   String selectedValue = "En";
   List<String> languages = ['En', 'සිං', 'தமி'];
+
   late AnimationController _controller;
   late Animation<double> _arrowAnimation;
 
@@ -21,13 +22,19 @@ class _SplashScreen2 extends State<SplashScreen2>
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     )..repeat(reverse: true);
 
+    // Horizontal animation for forward arrow
     _arrowAnimation = Tween<double>(
       begin: 0,
       end: 15,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
   }
 
   @override
@@ -36,6 +43,7 @@ class _SplashScreen2 extends State<SplashScreen2>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -63,15 +71,14 @@ class _SplashScreen2 extends State<SplashScreen2>
             ),
           ],
         ),
-        actions: <Widget>[
+        actions: [
           Padding(
-            padding: EdgeInsetsGeometry.only(right: 15),
+            padding: const EdgeInsets.only(right: 15),
             child: Container(
               width: 80,
               height: 40,
-              padding: EdgeInsets.all(6),
+              padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
-                color: Colors.transparent,
                 border: Border.all(color: Colors.white, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -84,26 +91,15 @@ class _SplashScreen2 extends State<SplashScreen2>
                     color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2,
                   ),
-                  items: languages.map((String item) {
-                    return DropdownMenuItem<String>(
+                  items: languages.map((item) {
+                    return DropdownMenuItem(
                       value: item,
-                      child: Text(
-                        item,
-                        style: TextStyle(
-                          color: Colors.white,
-                          letterSpacing: 1.2,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
+                      child: Text(item),
                     );
                   }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedValue = newValue!;
-                    });
+                  onChanged: (val) {
+                    setState(() => selectedValue = val!);
                   },
                 ),
               ),
@@ -114,16 +110,19 @@ class _SplashScreen2 extends State<SplashScreen2>
 
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.only(top: 40),
-            child: Lottie.asset('lib/assests/Food_Courier.json'),
-          ),
-          SizedBox(height: 20),
           Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(top: 40),
+            child: Lottie.asset(
+              'lib/assests/Food_Courier.json', 
+            ),
+          ),
+
+          const SizedBox(height: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              textAlign: TextAlign.center,
               "Quick Cravings, Quicker Delivery.",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -131,7 +130,8 @@ class _SplashScreen2 extends State<SplashScreen2>
               ),
             ),
           ),
-          SizedBox(height: 6),
+
+          const SizedBox(height: 6),
           Container(
             width: 65,
             height: 6,
@@ -140,52 +140,42 @@ class _SplashScreen2 extends State<SplashScreen2>
               borderRadius: BorderRadius.circular(50),
             ),
           ),
-          SizedBox(height: 30),
+
+          const SizedBox(height: 30),
           Container(
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
               borderRadius: BorderRadius.circular(50),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
-                  blurRadius: 6,
-                  spreadRadius: 3,
-                ),
-              ],
             ),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Text(
-                textAlign: TextAlign.center,
-                "📍 Delivering near you",
-                style: TextStyle(
-                  letterSpacing: 1.1,
-                  fontSize: 15,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
+            child: const Text(
+              "📍 Delivering near you",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          SizedBox(height: 70),
+
+          const SizedBox(height: 70),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Swipe to Start",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 1.1,
                 ),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 20),
               AnimatedBuilder(
                 animation: _arrowAnimation,
                 builder: (context, child) {
                   return Transform.translate(
-                    offset: Offset(0, _arrowAnimation.value),
-                    child: Icon(
+                    offset: Offset(_arrowAnimation.value, 0),
+                    child: const Icon(
                       Icons.arrow_forward,
                       color: Colors.white,
                       size: 35,
@@ -193,20 +183,17 @@ class _SplashScreen2 extends State<SplashScreen2>
                   );
                 },
               ),
-
-              
-              
             ],
           ),
+
           const Spacer(),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               "Powered by Uber Eats",
               style: TextStyle(
                 fontSize: 10,
                 color: Colors.white,
-                letterSpacing: 1.05,
               ),
             ),
           ),
