@@ -88,71 +88,63 @@ class _SplashScreen2 extends State<SplashScreen2> {
       ),
 
       body: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(top: 40),
-              child: Lottie.asset('lib/assests/Food_Courier.json'),
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 40),
+            child: Lottie.asset('lib/assests/Food_Courier.json'),
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              textAlign: TextAlign.center,
+              "Quick Cravings, Quicker Delivery.",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Text(
-                textAlign: TextAlign.center,
-                "Quick Cravings, Quicker Delivery.",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32,
+          ),
+          SizedBox(height: 6),
+          Container(
+            width: 65,
+            height: 6,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(50),
+            ),
+          ),
+          SizedBox(height: 30),
+          Container(
+            height: 60,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.lightGreen.withOpacity(0.4),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.lightGreen.withOpacity(0.4),
+                  blurRadius: 6,
+                  spreadRadius: 3,
                 ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Container(
-              width: 65,
-              height: 6,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(50),
-              ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Expanded(child: Container(
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.5),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15)
-                    )
-                  ),
-                  child: Text("Hello"),
-                )),
-                SizedBox(width: 15,),
-                Expanded(child: Container(
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.5),
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
-                    )
-                  ),
-                  child: Text("World"),
-                ))
               ],
             ),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(bottom: 25),
-              child: Text(
-                "Powered by Uber Eats",
-                style: TextStyle(color: Colors.white, letterSpacing: 1.05),
-              ),
+            child: Text("📍 Delivering near you", style: TextStyle(
+              fontSize: 15,
+              color: Colors.white
+            ),),
+          ),
+          const Spacer(),
+          Padding(
+            padding: EdgeInsets.only(bottom: 25),
+            child: Text(
+              "Powered by Uber Eats",
+              style: TextStyle(color: Colors.white, letterSpacing: 1.05),
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 }
