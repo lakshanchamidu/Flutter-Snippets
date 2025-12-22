@@ -91,11 +91,11 @@ class _LoginPage1 extends State<LoginPage1> {
             child: Lottie.asset('lib/assests/Cat_Movement.json'),
           ),
 
-          SizedBox(height: 20,),
-          Text("Log In", style: GoogleFonts.inter(
+          SizedBox(height: 15,),
+          Text("Log In", style: GoogleFonts.outfit(
             color: Colors.deepOrange,
             fontWeight: FontWeight.bold,
-            fontSize: 33,
+            fontSize: 35,
             letterSpacing: 1.2
           ),),
 
