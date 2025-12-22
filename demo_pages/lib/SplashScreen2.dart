@@ -143,33 +143,13 @@ class _SplashScreen2 extends State<SplashScreen2> {
             ),
           ),
           SizedBox(height: 20),
-          Padding(
-            padding: EdgeInsets.only(left: 40, right: 40),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
-              ),
-              child: Padding(
-                padding: EdgeInsetsGeometry.all(10),
-                child: Text(
-                  "⭐ 4.8 Rated | 🚴 Fast delivery",
-                  style: TextStyle(
-                    color: Colors.white,
-                    letterSpacing: 1.1,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          
           const Spacer(),
           Padding(
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               "Powered by Uber Eats",
-              style: TextStyle(color: Colors.white, letterSpacing: 1.05),
+              style: TextStyle(fontSize: 10, color: Colors.white, letterSpacing: 1.05),
             ),
           ),
         ],
