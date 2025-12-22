@@ -187,6 +187,19 @@ class _LoginPage1 extends State<LoginPage1> {
                     ],
                   ),
                 ),
+                SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Text("Create New Account? ", style: TextStyle(
+                      fontSize: 30
+                    ),),
+                    GestureDetector(
+                      onTap: (){},
+                      child: Text("Sign up"),
+                    )
+                  ],
+                )
+
               ],
             ),
           ),
@@ -223,7 +236,9 @@ class _LoginPage1 extends State<LoginPage1> {
                 ),
               ],
             ),
+            
           ),
+          
         ],
       ),
     );
