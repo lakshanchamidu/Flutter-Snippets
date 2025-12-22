@@ -16,14 +16,24 @@ class _SplashScreen2 extends State<SplashScreen2> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          "Uber Eats",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 32,
-            letterSpacing: 1.2,
-          ),
+        title: const Row(
+          children: [
+            Text(
+              "Uber",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 32,
+                letterSpacing: 1.2,
+              ),
+            ),
+            Text("Eats", style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.green,
+              fontSize: 32,
+              letterSpacing: 1.2
+            ),)
+          ],
         ),
         actions: <Widget>[
           Padding(
@@ -78,8 +88,22 @@ class _SplashScreen2 extends State<SplashScreen2> {
         children: [
           Container(
             padding: EdgeInsets.only(top: 50),
-            child: Lottie.asset('lib/assests/Food_Courier.json')
-          )
+            child: Lottie.asset('lib/assests/Food_Courier.json'),
+          ),
+          SizedBox(height: 40),
+          Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
+              textAlign: TextAlign.center,
+              "Quick Cravings, Quicker Delivery.",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+            ),
+          ),
+          SizedBox(height: 6,),
         ],
       ),
     );
