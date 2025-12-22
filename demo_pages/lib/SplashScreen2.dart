@@ -29,12 +29,7 @@ class _SplashScreen2 extends State<SplashScreen2>
     _arrowAnimation = Tween<double>(
       begin: 0,
       end: 15,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -93,10 +88,7 @@ class _SplashScreen2 extends State<SplashScreen2>
                     fontWeight: FontWeight.bold,
                   ),
                   items: languages.map((item) {
-                    return DropdownMenuItem(
-                      value: item,
-                      child: Text(item),
-                    );
+                    return DropdownMenuItem(value: item, child: Text(item));
                   }).toList(),
                   onChanged: (val) {
                     setState(() => selectedValue = val!);
@@ -112,9 +104,7 @@ class _SplashScreen2 extends State<SplashScreen2>
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 40),
-            child: Lottie.asset(
-              'lib/assests/Food_Courier.json', 
-            ),
+            child: Lottie.asset('lib/assests/Food_Courier.json'),
           ),
 
           const SizedBox(height: 20),
@@ -130,7 +120,6 @@ class _SplashScreen2 extends State<SplashScreen2>
               ),
             ),
           ),
-
           const SizedBox(height: 6),
           Container(
             width: 65,
@@ -156,70 +145,76 @@ class _SplashScreen2 extends State<SplashScreen2>
               ),
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(50),
                 ),
-                child: const Text("Hellow World", style: TextStyle(
-                  color: Colors.white
-                ),)
+                child: const Text(
+                  "⭐ 4.8 Rated",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10),
               Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white
+                  color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(50),
                 ),
-                child: const Text("Welcome", style: TextStyle(
-                  color: Colors.white
-                ),),
-              )
+                child: const Text(
+                  "🚴 Fast delivery",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
             ],
           ),
 
-          // const SizedBox(height: 70),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     const Text(
-          //       "Swipe to Start",
-          //       style: TextStyle(
-          //         color: Colors.white,
-          //         fontSize: 20,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //     ),
-          //     const SizedBox(width: 20),
-          //     AnimatedBuilder(
-          //       animation: _arrowAnimation,
-          //       builder: (context, child) {
-          //         return Transform.translate(
-          //           offset: Offset(_arrowAnimation.value, 0),
-          //           child: const Icon(
-          //             Icons.arrow_forward,
-          //             color: Colors.white,
-          //             size: 35,
-          //           ),
-          //         );
-          //       },
-          //     ),
-          //   ],
-          // ),
-
+          const SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Swipe to Start",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(width: 20),
+              AnimatedBuilder(
+                animation: _arrowAnimation,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(_arrowAnimation.value, 0),
+                    child: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
           const Spacer(),
           const Padding(
             padding: EdgeInsets.only(bottom: 25),
             child: Text(
               "Powered by Uber Eats",
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.white,
-              ),
+              style: TextStyle(fontSize: 10, color: Colors.white),
             ),
           ),
         ],
