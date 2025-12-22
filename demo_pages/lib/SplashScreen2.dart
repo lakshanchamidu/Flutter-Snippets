@@ -117,8 +117,6 @@ class _SplashScreen2 extends State<SplashScreen2> {
           ),
           SizedBox(height: 30),
           Container(
-
-
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
               borderRadius: BorderRadius.circular(50),
@@ -140,6 +138,28 @@ class _SplashScreen2 extends State<SplashScreen2> {
                   fontSize: 15,
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.only(left: 40, right: 40),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
+              ),
+              child: Padding(
+                padding: EdgeInsetsGeometry.all(10),
+                child: Text(
+                  "⭐ 4.8 Rated | 🚴 Fast delivery",
+                  style: TextStyle(
+                    color: Colors.white,
+                    letterSpacing: 1.1,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
