@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage1 extends StatefulWidget {
   const LoginPage1({super.key});
@@ -76,6 +77,15 @@ class _LoginPage1 extends State<LoginPage1> {
               ),
             ),
           ),
+        ],
+      ),
+
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 30),
+            child: Lottie.asset('lib/assests/Cat_Movement.json'),
+          )
         ],
       ),
     );
