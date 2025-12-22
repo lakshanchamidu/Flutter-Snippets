@@ -131,7 +131,7 @@ class _LoginPage1 extends State<LoginPage1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 20),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Password",
@@ -155,8 +155,29 @@ class _LoginPage1 extends State<LoginPage1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-                ElevatedButton(onPressed: (){ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: const Text("Login Successfully.")))}, child: child)
+                SizedBox(height: 30),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    foregroundColor: Colors.white,
+                    minimumSize: Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      
+                    )
+                  ),
+                  
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: const Text("Login Successfully.")),
+                    );
+                  },
+                  child: const Text("Log In",style: TextStyle(
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23
+                  ),),
+                ),
               ],
             ),
           ),
