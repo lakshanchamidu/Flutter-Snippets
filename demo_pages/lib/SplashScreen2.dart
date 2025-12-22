@@ -117,23 +117,32 @@ class _SplashScreen2 extends State<SplashScreen2> {
           ),
           SizedBox(height: 30),
           Container(
-            height: 60,
-            width: 150,
+
+
             decoration: BoxDecoration(
-              color: Colors.lightGreen.withOpacity(0.4),
-              borderRadius: BorderRadius.circular(15),
+              color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
+              borderRadius: BorderRadius.circular(50),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.lightGreen.withOpacity(0.4),
+                  color: const Color.fromARGB(255, 38, 71, 1).withOpacity(0.4),
                   blurRadius: 6,
                   spreadRadius: 3,
                 ),
               ],
             ),
-            child: Text("📍 Delivering near you", style: TextStyle(
-              fontSize: 15,
-              color: Colors.white
-            ),),
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                textAlign: TextAlign.center,
+                "📍 Delivering near you",
+                style: TextStyle(
+                  letterSpacing: 1.1,
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
           ),
           const Spacer(),
           Padding(
