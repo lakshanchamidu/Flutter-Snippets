@@ -8,8 +8,8 @@ class LoginPage1 extends StatefulWidget {
 }
 
 class _LoginPage1 extends State<LoginPage1> {
-  String _selectedValue = "🌐 En";
-  List<String> language = ["🌐 En", "🌐 සිං", "🌐 தமி"];
+  String _selectedValue = "En";
+  List<String> language = ["En", "සිං", "தமி"];
 
   @override
   Widget build(BuildContext context) {
@@ -46,27 +46,33 @@ class _LoginPage1 extends State<LoginPage1> {
                 border: Border.all(color: Colors.black, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
-                  value: _selectedValue,
-                  dropdownColor: Colors.grey.shade200,
-                  icon: Icon(Icons.arrow_drop_down),
-                  items: language
-                      .map<DropdownMenuItem<String>>((String item) {
-                    return DropdownMenuItem<String>(
-                      value: item,
-                      child: Text(
-                        item,
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (String? val) {
-                    setState(() {
-                      _selectedValue = val!;
-                    });
-                  },
-                ),
+              child: Row(
+                children: [
+                  Text("🌐 "),
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      value: _selectedValue,
+                      dropdownColor: Colors.grey.shade200,
+                      icon: Icon(Icons.arrow_drop_down),
+                      items: language.map<DropdownMenuItem<String>>((
+                        String item,
+                      ) {
+                        return DropdownMenuItem<String>(
+                          value: item,
+                          child: Text(
+                            item,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (String? val) {
+                        setState(() {
+                          _selectedValue = val!;
+                        });
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
