@@ -156,35 +156,60 @@ class _SplashScreen2 extends State<SplashScreen2>
               ),
             ),
           ),
-
-          const SizedBox(height: 70),
+          SizedBox(height: 15,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Swipe to Start",
-                style: TextStyle(
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
                 ),
+                child: const Text("Hellow World", style: TextStyle(
+                  color: Colors.white
+                ),)
               ),
-              const SizedBox(width: 20),
-              AnimatedBuilder(
-                animation: _arrowAnimation,
-                builder: (context, child) {
-                  return Transform.translate(
-                    offset: Offset(_arrowAnimation.value, 0),
-                    child: const Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
-                      size: 35,
-                    ),
-                  );
-                },
-              ),
+              SizedBox(width: 10,),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white
+                ),
+                child: const Text("Welcome", style: TextStyle(
+                  color: Colors.white
+                ),),
+              )
             ],
           ),
+
+          // const SizedBox(height: 70),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     const Text(
+          //       "Swipe to Start",
+          //       style: TextStyle(
+          //         color: Colors.white,
+          //         fontSize: 20,
+          //         fontWeight: FontWeight.bold,
+          //       ),
+          //     ),
+          //     const SizedBox(width: 20),
+          //     AnimatedBuilder(
+          //       animation: _arrowAnimation,
+          //       builder: (context, child) {
+          //         return Transform.translate(
+          //           offset: Offset(_arrowAnimation.value, 0),
+          //           child: const Icon(
+          //             Icons.arrow_forward,
+          //             color: Colors.white,
+          //             size: 35,
+          //           ),
+          //         );
+          //       },
+          //     ),
+          //   ],
+          // ),
 
           const Spacer(),
           const Padding(
