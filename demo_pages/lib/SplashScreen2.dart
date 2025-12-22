@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen2 extends StatefulWidget {
   const SplashScreen2({super.key});
@@ -70,6 +71,14 @@ class _SplashScreen2 extends State<SplashScreen2> {
               ),
             ),
           ),
+        ],
+      ),
+
+      body: Column(
+        children: [
+          Container(
+            child: Lottie.asset('lib/assests/Delivery_guy.json')
+          )
         ],
       ),
     );
