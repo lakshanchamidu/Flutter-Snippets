@@ -13,9 +13,9 @@ class _SplashScreen2 extends State<SplashScreen2> {
   List<String> languages = ['En', 'සිං', 'தமி'];
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[900],
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.green[900],
+        backgroundColor: Colors.black,
         title: const Text(
           "Uber Eats",
           style: TextStyle(
@@ -77,7 +77,8 @@ class _SplashScreen2 extends State<SplashScreen2> {
       body: Column(
         children: [
           Container(
-            child: Lottie.asset('lib/assests/Delivery_guy.json')
+            padding: EdgeInsets.only(top: 50),
+            child: Lottie.asset('lib/assests/Food_Courier.json')
           )
         ],
       ),
