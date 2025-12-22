@@ -45,5 +45,5 @@ while true; do
   fi
 
   # Wait 30 minutes
-  sleep 1800
+  sleep 900
 done

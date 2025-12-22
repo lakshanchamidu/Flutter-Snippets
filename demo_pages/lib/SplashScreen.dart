@@ -46,18 +46,12 @@ class _SplashScreen extends State<SplashScreen> {
               flex: 2,
               child: Lottie.asset("lib/assests/Food_Courier.json"),
             ),
-            
-            // Details වල part එක
             Expanded(
               flex: 2,
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.black, Colors.grey[900]!],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
+                  color: Colors.black,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(35),
                     topRight: Radius.circular(35),
@@ -75,7 +69,6 @@ class _SplashScreen extends State<SplashScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // App name
                       Text(
                         "GoDelivery",
                         style: TextStyle(
