@@ -61,14 +61,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assests/Splash_screen.json
-    - lib/assests/error_screen.json
-    - lib/assests/Lonely_404.json
-    - lib/assests/Food_Courier.json
-    - lib/assests/Delivery_guy.json
-    - lib/assests/Cat_Movement.json
-    - lib/assests/DemoApp1.png
-    - lib/assests/paymentCard.json
+    - lib/assets/Splash_screen.json
+    - lib/assets/error_screen.json
+    - lib/assets/Lonely_404.json
+    - lib/assets/Food_Courier.json
+    - lib/assets/Delivery_guy.json
+    - lib/assets/Cat_Movement.json
+    - lib/assets/DemoApp1.png
+    - lib/assets/paymentCard.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

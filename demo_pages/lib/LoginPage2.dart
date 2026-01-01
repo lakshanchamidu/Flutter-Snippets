@@ -43,8 +43,8 @@ class _LoginPage2 extends State<LoginPage2> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 40),
-            child: Lottie.asset('lib/assests/paymentCard.json'),
+            padding: EdgeInsets.all(25),
+            child: Lottie.asset('lib/assets/paymentCard.json'),
           ),
         ],
       ),
