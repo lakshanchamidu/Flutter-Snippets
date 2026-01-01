@@ -8,6 +8,11 @@ class LoginPage2 extends StatefulWidget {
   State<LoginPage2> createState() => _LoginPage2();
 }
 class _LoginPage2 extends State<LoginPage2> {
+
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -73,6 +78,7 @@ class _LoginPage2 extends State<LoginPage2> {
                     border: Border.all(color: Colors.white.withOpacity(0.2)),
                   ),
                   child: TextField(
+                    controller: nameController,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintStyle: TextStyle(color: Colors.white70),
@@ -94,6 +100,7 @@ class _LoginPage2 extends State<LoginPage2> {
                     border: Border.all(color: Colors.white.withOpacity(0.2)),
                   ),
                   child: TextField(
+                    controller: emailController,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Email",
@@ -115,7 +122,7 @@ class _LoginPage2 extends State<LoginPage2> {
                     border: Border.all(color: Colors.white70.withOpacity(0.2)),
                   ),
                   child: TextField(
-                    
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: "Password",
