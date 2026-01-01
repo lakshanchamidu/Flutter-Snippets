@@ -160,7 +160,12 @@ class _LoginPage2 extends State<LoginPage2> {
                 ),
               ),
               SizedBox(height: 10),
-              GestureDetector(child: Text("Already have account? Log In")),
+              GestureDetector(
+                child: Text(
+                  "Already have account? Log In",
+                  style: TextStyle(color: Colors.white, letterSpacing: 1.1),
+                ),
+              ),
             ],
           ),
           Spacer(),
@@ -168,7 +173,11 @@ class _LoginPage2 extends State<LoginPage2> {
             padding: EdgeInsets.only(bottom: 20),
             child: Text(
               "Developed by Chamidu",
-              style: TextStyle(color: Colors.grey[500], letterSpacing: 1.1),
+              style: TextStyle(
+                color: Colors.grey[500],
+                letterSpacing: 1.1,
+                fontSize: 10,
+              ),
             ),
           ),
         ],
