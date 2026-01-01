@@ -49,24 +49,49 @@ class _LoginPage2 extends State<LoginPage2> {
           ),
 
           Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 4),
-                  child: Text(
-                    "Log In",
-                    style: GoogleFonts.lato(
-                      color: Colors.white,
-                      fontSize: 30,
-                      letterSpacing: 1.1,
-                      fontWeight: FontWeight.bold
-                    ),
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 4),
+                child: Text(
+                  "Log In",
+                  style: GoogleFonts.lato(
+                    color: Colors.white,
+                    fontSize: 30,
+                    letterSpacing: 1.1,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                
-              ],
+              ),
+              SizedBox(height: 25,),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+              child:  Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white.withOpacity(0.2)),
+                ),
+                child: TextField(
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: "Username",
+                    hintStyle: TextStyle(color: Colors.white70),
+                    prefixIcon: Icon(Icons.email, color: Colors.white),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(vertical: 18),
+                  ),
+                ),
+              ),
+              ),
+            ],
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.only(bottom: 20),
+            child: Text(
+              "Developed by Chamidu",
+              style: TextStyle(color: Colors.grey[500], letterSpacing: 1.1),
             ),
-            Spacer(),
-            Text("Developed by Chamidu")
+          ),
         ],
       ),
     );
