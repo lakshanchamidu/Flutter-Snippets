@@ -47,10 +47,10 @@ class _LoginPage2 extends State<LoginPage2> {
             padding: EdgeInsets.all(25),
             child: Lottie.asset('lib/assets/paymentCard.json'),
           ),
-          SizedBox(height: 4),
+
           Container(
             width: double.infinity,
-            height: 413,
+            height: 415,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -61,10 +61,10 @@ class _LoginPage2 extends State<LoginPage2> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 4),
                   child: Text(
                     "Log In",
-                    style: GoogleFonts.roboto(
+                    style: GoogleFonts.lato(
                       color: Colors.black,
                       fontSize: 30,
                       letterSpacing: 1.1,
