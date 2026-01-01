@@ -48,33 +48,25 @@ class _LoginPage2 extends State<LoginPage2> {
             child: Lottie.asset('lib/assets/paymentCard.json'),
           ),
 
-          Container(
-            width: double.infinity,
-            height: 415,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-            ),
-            child: Column(
+          Column(
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 4),
                   child: Text(
                     "Log In",
                     style: GoogleFonts.lato(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 30,
                       letterSpacing: 1.1,
                       fontWeight: FontWeight.bold
                     ),
                   ),
                 ),
+                
               ],
             ),
-          ),
+            Spacer(),
+            Text("Developed by Chamidu")
         ],
       ),
     );
