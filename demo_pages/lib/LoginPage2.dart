@@ -1,17 +1,44 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:lottie/lottie.dart';
+
 class LoginPage2 extends StatefulWidget {
   const LoginPage2({super.key});
 
   @override
   State<LoginPage2> createState() => _LoginPage2();
 }
-class _LoginPage2 extends State<LoginPage2> {
 
+class _LoginPage2 extends State<LoginPage2> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  Future<void> signupEmail(String name, String email, String password) async {
+    try {
+      UserCredential user = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      await _firestore.collection('users').doc(user.user!.uid).set({
+        "name": name,
+        "email": email,
+        "password": password,
+        "createdAt": FieldValue.serverTimestamp(),
+      });
+
+
+
+      print("SignUp with ${user.user!.email}");
+    } on FirebaseAuthException catch (e) {
+      print("Error: ${e.message}");
+    }
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,17 +173,22 @@ class _LoginPage2 extends State<LoginPage2> {
                           behavior: SnackBarBehavior.floating,
                           backgroundColor: Colors.white70.withOpacity(0.08),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          content:Row(
-                          children: [
-                            Icon(Icons.verified_rounded, color: Colors.greenAccent,),
-                            SizedBox(width: 10,),
-                            Text("SignUp Successful", style: TextStyle(
-                              color: Colors.white
-                            ),)
-                          ],
-                        )),
+                          content: Row(
+                            children: [
+                              Icon(
+                                Icons.verified_rounded,
+                                color: Colors.greenAccent,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "SignUp Successful",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
                       );
                     },
                     style: ElevatedButton.styleFrom(
