@@ -31,9 +31,6 @@ class _LoginPage2 extends State<LoginPage2> {
         "password": password,
         "createdAt": FieldValue.serverTimestamp(),
       });
-
-
-
       print("SignUp with ${user.user!.email}");
     } on FirebaseAuthException catch (e) {
       print("Error: ${e.message}");
@@ -168,6 +165,11 @@ class _LoginPage2 extends State<LoginPage2> {
                   padding: EdgeInsets.symmetric(horizontal: 15),
                   child: ElevatedButton(
                     onPressed: () {
+                      signupEmail(
+                        nameController.text,
+                        emailController.text,
+                        passwordController.text,
+                      );
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           behavior: SnackBarBehavior.floating,

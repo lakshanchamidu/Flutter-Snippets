@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'LoginPage2.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized;
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext conetxt) {
+  Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage2());
   }
 }
