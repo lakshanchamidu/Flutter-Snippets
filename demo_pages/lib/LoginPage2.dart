@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-
 class LoginPage2 extends StatefulWidget {
   const LoginPage2({super.key});
 
   @override
   State<LoginPage2> createState() => _LoginPage2();
 }
-
 class _LoginPage2 extends State<LoginPage2> {
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,6 +115,7 @@ class _LoginPage2 extends State<LoginPage2> {
                     border: Border.all(color: Colors.white70.withOpacity(0.2)),
                   ),
                   child: TextField(
+                    
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: "Password",
@@ -136,7 +135,21 @@ class _LoginPage2 extends State<LoginPage2> {
                   child: ElevatedButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Sign Up succesfully.")),
+                        SnackBar(
+                          behavior: SnackBarBehavior.floating,
+                          backgroundColor: Colors.white70.withOpacity(0.08),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          content:Row(
+                          children: [
+                            Icon(Icons.verified_rounded, color: Colors.greenAccent,),
+                            SizedBox(width: 10,),
+                            Text("SignUp Successful", style: TextStyle(
+                              color: Colors.white
+                            ),)
+                          ],
+                        )),
                       );
                     },
                     style: ElevatedButton.styleFrom(
