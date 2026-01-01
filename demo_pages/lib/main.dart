@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'LoginPage1.dart';
+import 'LoginPage2.dart';
 
 void main () => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext conetxt){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage1(),
+      home: LoginPage2(),
     );
   }
 }
