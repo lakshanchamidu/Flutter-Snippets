@@ -48,7 +48,7 @@ class _LoginPage2 extends State<LoginPage2> {
             child: Lottie.asset(
               'lib/assets/paymentCard.json',
               fit: BoxFit.contain,
-              height: 350
+              height: 350,
             ),
           ),
           Column(
@@ -81,12 +81,12 @@ class _LoginPage2 extends State<LoginPage2> {
                       hintText: "Name",
                       border: InputBorder.none,
                       contentPadding: EdgeInsets.symmetric(vertical: 18),
-                      prefixIcon: Icon(Icons.person, color: Colors.white70,)
+                      prefixIcon: Icon(Icons.person, color: Colors.white70),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Container(
@@ -128,6 +128,39 @@ class _LoginPage2 extends State<LoginPage2> {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
+              SizedBox(
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Sign Up succesfully.")),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue[900],
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      elevation: 6,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    child: Text(
+                      "Create Account",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              GestureDetector(child: Text("Already have account? Log In")),
             ],
           ),
           Spacer(),
