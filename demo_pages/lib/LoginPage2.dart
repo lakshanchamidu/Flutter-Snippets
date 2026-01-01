@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class LoginPage2 extends StatefulWidget {
@@ -46,26 +47,34 @@ class _LoginPage2 extends State<LoginPage2> {
             padding: EdgeInsets.all(25),
             child: Lottie.asset('lib/assets/paymentCard.json'),
           ),
-
-          SizedBox(height: 15,),
+          SizedBox(height: 4),
           Container(
             width: double.infinity,
-            height: 400,
+            height: 413,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(30),
-                topRight: Radius.circular(30)
-              )
+                topRight: Radius.circular(30),
+              ),
             ),
             child: Column(
               children: [
-                Text("Secure your private data.", style: TextStyle(
-                  color: Colors.white
-                ),)
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Text(
+                    "Log In",
+                    style: GoogleFonts.roboto(
+                      color: Colors.black,
+                      fontSize: 30,
+                      letterSpacing: 1.1,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
