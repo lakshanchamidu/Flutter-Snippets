@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage2 extends StatefulWidget {
   const LoginPage2({super.key});
@@ -13,6 +14,11 @@ class _LoginPage2 extends State<LoginPage2> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
+        leading: Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: Icon(Icons.menu, color: Colors.white, size: 32),
+        ),
+        centerTitle: true,
         title: Text(
           "Wallet",
           style: TextStyle(
@@ -23,8 +29,23 @@ class _LoginPage2 extends State<LoginPage2> {
           ),
         ),
         actions: <Widget>[
-          Padding(padding: EdgeInsets.only(right: 20), child: Icon(Icons.lock_outline_rounded, size: 32, color: Colors.white,)),
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: Icon(
+              Icons.lock_outline_rounded,
+              size: 32,
+              color: Colors.white,
+            ),
+          ),
         ],
+      ),
+
+
+      body: Column(
+        children: [Container(
+          padding: EdgeInsets.only(top: 40),
+          child: Lottie.asset("lib/assests/paymentCard.json"),
+        )],
       ),
     );
   }

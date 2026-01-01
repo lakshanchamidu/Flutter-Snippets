@@ -68,6 +68,7 @@ flutter:
     - lib/assests/Delivery_guy.json
     - lib/assests/Cat_Movement.json
     - lib/assests/DemoApp1.png
+    - lib/assests/paymentCard.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
