@@ -46,6 +46,26 @@ class _LoginPage2 extends State<LoginPage2> {
             padding: EdgeInsets.all(25),
             child: Lottie.asset('lib/assets/paymentCard.json'),
           ),
+
+          SizedBox(height: 15,),
+          Container(
+            width: double.infinity,
+            height: 400,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30)
+              )
+            ),
+            child: Column(
+              children: [
+                Text("Secure your private data.", style: TextStyle(
+                  color: Colors.white
+                ),)
+              ],
+            ),
+          )
         ],
       ),
     );
