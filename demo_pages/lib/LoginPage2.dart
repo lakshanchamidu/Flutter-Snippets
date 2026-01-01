@@ -40,14 +40,15 @@ class _LoginPage2 extends State<LoginPage2> {
           ),
         ],
       ),
-
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(25),
-            child: Lottie.asset('lib/assets/paymentCard.json'),
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Lottie.asset(
+              'lib/assets/paymentCard.json',
+              width: double.infinity,
+            ),
           ),
-
           Column(
             children: [
               Padding(
@@ -62,26 +63,46 @@ class _LoginPage2 extends State<LoginPage2> {
                   ),
                 ),
               ),
-              SizedBox(height: 25,),
-              Padding(padding: EdgeInsets.symmetric(horizontal: 15),
-              child:  Container(
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.08),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.white.withOpacity(0.2)),
-                ),
-                child: TextField(
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: "Username",
-                    hintStyle: TextStyle(color: Colors.white70),
-                    prefixIcon: Icon(Icons.email, color: Colors.white),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(vertical: 18),
+              SizedBox(height: 25),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.08),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  child: TextField(
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: "Username",
+                      hintStyle: TextStyle(color: Colors.white70),
+                      prefixIcon: Icon(Icons.email, color: Colors.white),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(vertical: 18),
+                    ),
                   ),
                 ),
               ),
+              SizedBox(height: 5,),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white70.withOpacity(0.2))
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    hintStyle: TextStyle(color: Colors.white70),
+                    prefixIcon: Icon(Icons.password, color: Colors.white70,),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(vertical: 18)
+                  ),
+                ),
               ),
+              )
             ],
           ),
           Spacer(),
