@@ -240,6 +240,29 @@ class _LoginPage3 extends State<LoginPage3> {
                         final password = passwordController.text.trim();
                         final confirmPassword = confirmController.text.trim();
 
+                        if (!email.contains('@')) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.white70.withOpacity(0.08),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              content: Row(
+                                children: [
+                                  Icon(Icons.error, color: Colors.red),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    "Please enter correct email.",
+                                    style: TextStyle(letterSpacing: 1.1),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                          return;
+                        }
+
                         if (name.isEmpty ||
                             email.isEmpty ||
                             password.isEmpty ||
@@ -263,8 +286,9 @@ class _LoginPage3 extends State<LoginPage3> {
                               ),
                             ),
                           );
+                          return;
                         }
-                        if (passwordController != confirmController) {
+                        if (password != confirmPassword) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
