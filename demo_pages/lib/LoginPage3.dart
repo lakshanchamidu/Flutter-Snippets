@@ -204,10 +204,14 @@ class _LoginPage3 extends State<LoginPage3> {
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
-                              _isPasswordHiddenConfirm = !_isPasswordHiddenConfirm;
+                              _isPasswordHiddenConfirm =
+                                  !_isPasswordHiddenConfirm;
                             });
                           },
-                          icon: Icon(_isPasswordHiddenConfirm ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                          icon: Icon(
+                            _isPasswordHiddenConfirm
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
                             color: Colors.white70,
                           ),
                         ),
@@ -231,6 +235,28 @@ class _LoginPage3 extends State<LoginPage3> {
                         ),
                       ),
                       onPressed: () {
+                        if (passwordController != confirmController) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.white70.withOpacity(0.08),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              content: Row(
+                                children: [
+                                  Icon(
+                                    Icons.error,
+                                    color: Colors.red,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text("Password mismatch.."),
+                                ],
+                              ),
+                            ),
+                          );
+                          return;
+                        }
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             behavior: SnackBarBehavior.floating,
