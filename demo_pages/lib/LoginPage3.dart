@@ -73,7 +73,7 @@ class _LoginPage3 extends State<LoginPage3> {
                     ),
                   ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 20),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
@@ -206,10 +206,27 @@ class _LoginPage3 extends State<LoginPage3> {
                         padding: EdgeInsets.symmetric(vertical: 12),
                         elevation: 6,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        )
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            behavior: SnackBarBehavior.floating,
+                            backgroundColor: Colors.white70.withOpacity(0.08),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            content: Row(
+                              children: [
+                                Icon(Icons.verified_user, color: Colors.green),
+                                SizedBox(width: 10),
+                                Text("Account Created Successfully."),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Create Account",
                         style: TextStyle(
@@ -222,7 +239,7 @@ class _LoginPage3 extends State<LoginPage3> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 10),
                 GestureDetector(
                   child: Text(
                     "Already have a account? Log in",
@@ -231,8 +248,6 @@ class _LoginPage3 extends State<LoginPage3> {
                 ),
               ],
             ),
-            Spacer(),
-            Text("Developed by Chamidu", style: TextStyle(color: Colors.grey[800])),
           ],
         ),
       ),
