@@ -235,6 +235,35 @@ class _LoginPage3 extends State<LoginPage3> {
                         ),
                       ),
                       onPressed: () {
+                        final name = nameController.text.trim();
+                        final email = emailcontroller.text.trim();
+                        final password = passwordController.text.trim();
+                        final confirmPassword = confirmController.text.trim();
+
+                        if (name.isEmpty ||
+                            email.isEmpty ||
+                            password.isEmpty ||
+                            confirmPassword.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.white70.withOpacity(0.08),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              content: Row(
+                                children: [
+                                  Icon(Icons.error, color: Colors.red),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    "Please fill all fields.",
+                                    style: TextStyle(letterSpacing: 1.1),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }
                         if (passwordController != confirmController) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -245,12 +274,12 @@ class _LoginPage3 extends State<LoginPage3> {
                               ),
                               content: Row(
                                 children: [
-                                  Icon(
-                                    Icons.error,
-                                    color: Colors.red,
-                                  ),
+                                  Icon(Icons.error, color: Colors.red),
                                   SizedBox(width: 10),
-                                  Text("Password mismatch.."),
+                                  Text(
+                                    "Password mismatch.",
+                                    style: TextStyle(letterSpacing: 1.1),
+                                  ),
                                 ],
                               ),
                             ),
