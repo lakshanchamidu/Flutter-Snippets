@@ -75,7 +75,7 @@ class _LoginPage3 extends State<LoginPage3> {
                 ),
                 SizedBox(height: 15),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     children: [
                       Expanded(
@@ -104,7 +104,7 @@ class _LoginPage3 extends State<LoginPage3> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(width: 10),
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
@@ -132,6 +132,40 @@ class _LoginPage3 extends State<LoginPage3> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.08),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.white.withOpacity(0.2)),
+                    ),
+                    child: TextField(
+                      obscureText: true,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(vertical: 18),
+                        hintText: "Password",
+                        hintStyle: TextStyle(color: Colors.white),
+                        prefixIcon: Icon(Icons.password, color: Colors.white,),
+                        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_outlined,color: Colors.white,))
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.08),
+                      border: Border.all(color: Colors.white.withOpacity(0.2)),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
                 ),
               ],
