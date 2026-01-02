@@ -25,7 +25,7 @@ class _LoginPage3 extends State<LoginPage3> {
         backgroundColor: Colors.black,
         title: Text(
           "Wallet",
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.dmSans(
             color: Colors.white,
             fontSize: 32,
             fontWeight: FontWeight.bold,
@@ -62,7 +62,42 @@ class _LoginPage3 extends State<LoginPage3> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 15),
-                child: Text("Sign Up"),
+                child: Text(
+                  "Sign Up",
+                  style: GoogleFonts.dmSans(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.08),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.2),
+                        ),
+                      ),
+                      child: TextField(
+                        style: TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          hintText: "Name",
+                          hintStyle: TextStyle(color: Colors.white70),
+                          contentPadding: EdgeInsets.symmetric(vertical: 18),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.person, color: Colors.white70),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
