@@ -25,7 +25,7 @@ class _LoginPage3 extends State<LoginPage3> {
         backgroundColor: Colors.black,
         title: Text(
           "Wallet",
-          style: GoogleFonts.yesevaOne(
+          style: GoogleFonts.outfit(
             color: Colors.white,
             fontSize: 32,
             fontWeight: FontWeight.bold,
