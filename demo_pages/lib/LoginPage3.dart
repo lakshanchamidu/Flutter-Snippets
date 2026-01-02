@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage3 extends StatefulWidget {
   const LoginPage3({super.key});
@@ -31,7 +32,6 @@ class _LoginPage3 extends State<LoginPage3> {
             letterSpacing: 1.2,
           ),
         ),
-
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 5),
@@ -44,6 +44,27 @@ class _LoginPage3 extends State<LoginPage3> {
               ),
             ),
           ),
+        ],
+      ),
+
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            width: MediaQuery.of(context).size.width,
+            child: Lottie.asset(
+              "lib/assets/paymentCard.json",
+              height: 350,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Column(
+            children: [
+              Padding(padding: EdgeInsets.only(top: 15),
+              child:  Text("Sign Up"),
+              ),
+            ],
+          )
         ],
       ),
     );
