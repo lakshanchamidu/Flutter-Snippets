@@ -15,6 +15,7 @@ class _LoginPage3 extends State<LoginPage3> {
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
   bool _isPasswordHidden = true;
+  bool _isPasswordHiddenConfirm = true;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,6 +190,7 @@ class _LoginPage3 extends State<LoginPage3> {
                     ),
                     child: TextField(
                       controller: confirmController,
+                      obscureText: _isPasswordHiddenConfirm,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: "Confirm Password",
@@ -200,9 +202,12 @@ class _LoginPage3 extends State<LoginPage3> {
                           color: Colors.white70,
                         ),
                         suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.visibility_outlined,
+                          onPressed: () {
+                            setState(() {
+                              _isPasswordHiddenConfirm = !_isPasswordHiddenConfirm;
+                            });
+                          },
+                          icon: Icon(_isPasswordHiddenConfirm ? Icons.visibility_outlined : Icons.visibility_off_outlined,
                             color: Colors.white70,
                           ),
                         ),
