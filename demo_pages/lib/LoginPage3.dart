@@ -55,16 +55,17 @@ class _LoginPage3 extends State<LoginPage3> {
             child: Lottie.asset(
               "lib/assets/paymentCard.json",
               height: 350,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
           Column(
             children: [
-              Padding(padding: EdgeInsets.only(top: 15),
-              child:  Text("Sign Up"),
+              Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Text("Sign Up"),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
