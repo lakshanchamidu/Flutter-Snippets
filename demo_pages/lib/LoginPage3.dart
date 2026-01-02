@@ -179,6 +179,10 @@ class _LoginPage3 extends State<LoginPage3> {
                     ),
                   ),
                 ),
+                SizedBox(height: 10,),
+                GestureDetector(
+                  child: Text("Already have a account? Log in", style: TextStyle(color: Colors.white70),),
+                )
               ],
             ),
           ],
