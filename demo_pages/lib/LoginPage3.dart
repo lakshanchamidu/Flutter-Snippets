@@ -10,6 +10,12 @@ class LoginPage3 extends StatefulWidget {
 }
 
 class _LoginPage3 extends State<LoginPage3> {
+  final nameController = TextEditingController();
+  final emailcontroller = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmController = TextEditingController();
+  bool _isPasswordHidden = true;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -88,6 +94,7 @@ class _LoginPage3 extends State<LoginPage3> {
                             ),
                           ),
                           child: TextField(
+                            controller: nameController,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               hintText: "Name",
@@ -115,6 +122,7 @@ class _LoginPage3 extends State<LoginPage3> {
                             ),
                           ),
                           child: TextField(
+                            controller: emailcontroller,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               hintText: "Email",
@@ -144,7 +152,8 @@ class _LoginPage3 extends State<LoginPage3> {
                       border: Border.all(color: Colors.white.withOpacity(0.2)),
                     ),
                     child: TextField(
-                      obscureText: true,
+                      controller: passwordController,
+                      obscureText: _isPasswordHidden,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -153,9 +162,15 @@ class _LoginPage3 extends State<LoginPage3> {
                         hintStyle: TextStyle(color: Colors.white70),
                         prefixIcon: Icon(Icons.password, color: Colors.white70),
                         suffixIcon: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _isPasswordHidden = !_isPasswordHidden;
+                            });
+                          },
                           icon: Icon(
-                            Icons.visibility_outlined,
+                            _isPasswordHidden
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
                             color: Colors.white,
                           ),
                         ),
@@ -173,6 +188,7 @@ class _LoginPage3 extends State<LoginPage3> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextField(
+                      controller: confirmController,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: "Confirm Password",
