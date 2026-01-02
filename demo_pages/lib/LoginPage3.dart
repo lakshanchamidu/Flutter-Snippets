@@ -150,8 +150,8 @@ class _LoginPage3 extends State<LoginPage3> {
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(vertical: 18),
                         hintText: "Password",
-                        hintStyle: TextStyle(color: Colors.white),
-                        prefixIcon: Icon(Icons.password, color: Colors.white,),
+                        hintStyle: TextStyle(color: Colors.white70),
+                        prefixIcon: Icon(Icons.password, color: Colors.white70,),
                         suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_outlined,color: Colors.white,))
                       ),
                     ),
@@ -165,6 +165,17 @@ class _LoginPage3 extends State<LoginPage3> {
                       color: Colors.white.withOpacity(0.08),
                       border: Border.all(color: Colors.white.withOpacity(0.2)),
                       borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        hintText: "Confirm Password",
+                        hintStyle: TextStyle(color: Colors.white70),
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(vertical: 18),
+                        prefixIcon: Icon(Icons.password_outlined, color: Colors.white70,),
+                        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_outlined, color: Colors.white70,))
+                      ),
                     ),
                   ),
                 ),
