@@ -151,8 +151,14 @@ class _LoginPage3 extends State<LoginPage3> {
                         contentPadding: EdgeInsets.symmetric(vertical: 18),
                         hintText: "Password",
                         hintStyle: TextStyle(color: Colors.white70),
-                        prefixIcon: Icon(Icons.password, color: Colors.white70,),
-                        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_outlined,color: Colors.white,))
+                        prefixIcon: Icon(Icons.password, color: Colors.white70),
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.visibility_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -173,18 +179,60 @@ class _LoginPage3 extends State<LoginPage3> {
                         hintStyle: TextStyle(color: Colors.white70),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(vertical: 18),
-                        prefixIcon: Icon(Icons.password_outlined, color: Colors.white70,),
-                        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_outlined, color: Colors.white70,))
+                        prefixIcon: Icon(
+                          Icons.password_outlined,
+                          color: Colors.white70,
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.visibility_outlined,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[800],
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                        )
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Create Account",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.2,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(height: 10,),
                 GestureDetector(
-                  child: Text("Already have a account? Log in", style: TextStyle(color: Colors.white70),),
-                )
+                  child: Text(
+                    "Already have a account? Log in",
+                    style: TextStyle(color: Colors.white70),
+                  ),
+                ),
               ],
             ),
+            Spacer(),
+            Text("Developed by Chamidu", style: TextStyle(color: Colors.grey[800])),
           ],
         ),
       ),
