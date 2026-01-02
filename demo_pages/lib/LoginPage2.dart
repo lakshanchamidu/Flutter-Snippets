@@ -75,7 +75,7 @@ class _LoginPage2 extends State<LoginPage2> {
             child: Lottie.asset(
               'lib/assets/paymentCard.json',
               fit: BoxFit.contain,
-              height: 350,
+              height: 300,
             ),
           ),
           Column(
