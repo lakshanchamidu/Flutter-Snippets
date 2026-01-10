@@ -20,12 +20,20 @@ class _NavigationBars extends State<NavigationBars> {
               style: TextStyle(fontSize: 22, color: Colors.white),
             ),
           ),
-          Positioned(
-            bottom: 50,
-            left: MediaQuery.of(context).size.width / 2 - 30,
+          Align(
+            alignment: Alignment.bottomCenter,
             child: Container(
-              height: 56,
-              width: 56,
+              height: 70,
+              color: Colors.black,
+              width: double.infinity,
+            ),
+          ),
+          Positioned(
+            bottom: 40,
+            left: MediaQuery.of(context).size.width / 2 - 33,
+            child: Container(
+              height: 66,
+              width: 66,
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
