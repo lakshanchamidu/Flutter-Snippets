@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class BottomBarClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
