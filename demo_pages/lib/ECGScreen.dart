@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:ui';
 
 class ECGScreen extends StatefulWidget {
   const ECGScreen({super.key});
@@ -14,7 +15,16 @@ class _ECGScreen extends State<ECGScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF8EC5FC),
+              Color(0xFFE0C3FC),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +43,7 @@ class _ECGScreen extends State<ECGScreen> {
                         children: [
                           TextSpan(
                             text: "Hi Chamidu!",
-                            style: TextStyle(color: Colors.grey[800]),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ],
                       ),
@@ -41,37 +51,65 @@ class _ECGScreen extends State<ECGScreen> {
                     Container(
                       margin: EdgeInsets.only(right: 20),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(
-                          255,
-                          151,
-                          52,
-                          52,
-                        ).withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Colors.white.withOpacity(0.2),
+                            Colors.white.withOpacity(0.1),
+                          ],
+                        ),
                         border: Border.all(
                           color: Colors.white.withOpacity(0.3),
-                          width: 1,
+                          width: 1.5,
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.person_2_outlined,
-                              color: Colors.black,
-                              size: 28,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.notifications_outlined,
-                              size: 28,
-                              color: Colors.black,
-                            ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                            spreadRadius: 0,
                           ),
                         ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 5),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Colors.white.withOpacity(0.15),
+                                  Colors.white.withOpacity(0.05),
+                                ],
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.person_2_outlined,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.notifications_outlined,
+                                    size: 28,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -82,7 +120,7 @@ class _ECGScreen extends State<ECGScreen> {
                 child: Text(
                   "Let's measure\nyour heart\nrate",
                   style: GoogleFonts.aBeeZee(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                     height: 1.2,
