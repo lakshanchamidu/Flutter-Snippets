@@ -26,7 +26,7 @@ class _NavigationBars extends State<NavigationBars> {
             child: ClipPath(
               clipper: BottomBarClipper(),
               child: Container(
-                height: 80,
+                height: 90,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.black,
@@ -35,11 +35,23 @@ class _NavigationBars extends State<NavigationBars> {
                     topRight: Radius.circular(50),
                   ),
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        _navbaricon(Icons.home_outlined, () {}),
+                        const SizedBox(width: 20),
+                        _navbaricon(Icons.search_outlined, () {}),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
           Positioned(
-            bottom: 40,
+            bottom: 50,
             left: MediaQuery.of(context).size.width / 2 - 30,
             child: Container(
               height: 60,
@@ -53,6 +65,13 @@ class _NavigationBars extends State<NavigationBars> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _navbaricon(IconData icon, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Icon(icon, color: Colors.white, size: 28),
     );
   }
 }
