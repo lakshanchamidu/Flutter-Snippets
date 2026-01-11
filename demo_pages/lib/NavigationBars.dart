@@ -23,29 +23,28 @@ class _NavigationBars extends State<NavigationBars> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 70,
-              color: Colors.black,
+              height: 80,
               width: double.infinity,
               decoration: BoxDecoration(
+                color: Colors.black,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50)
                 )
               ),
-              child: Icon(Icons.abc_outlined),
             ),
           ),
           Positioned(
             bottom: 40,
-            left: MediaQuery.of(context).size.width / 2 - 33,
+            left: MediaQuery.of(context).size.width / 2 - 30,
             child: Container(
-              height: 66,
-              width: 66,
+              height: 60,
+              width: 60,
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: Icon(Icons.add, color: Colors.black, size: 28),
+              child: Icon(Icons.add, color: Colors.black, size: 40),
             ),
           ),
         ],
