@@ -35,17 +35,28 @@ class _NavigationBars extends State<NavigationBars> {
                     topRight: Radius.circular(50),
                   ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        _navbaricon(Icons.home_outlined, () {}),
-                        const SizedBox(width: 20),
-                        _navbaricon(Icons.search_outlined, () {}),
-                      ],
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          _navbaricon(Icons.home_outlined, () {}),
+                          const SizedBox(width: 35),
+                          _navbaricon(Icons.search_outlined, () {}),
+                        ],
+                      ),
+                      const SizedBox(width: 80),
+                      Row(
+                        children: [
+                          _navbaricon(Icons.notifications_none, () {}),
+                          const SizedBox(width: 35),
+                          _navbaricon(Icons.person_outline, () {}),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -71,7 +82,7 @@ class _NavigationBars extends State<NavigationBars> {
   Widget _navbaricon(IconData icon, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
-      child: Icon(icon, color: Colors.white, size: 28),
+      child: Icon(icon, color: Colors.white, size: 35),
     );
   }
 }
