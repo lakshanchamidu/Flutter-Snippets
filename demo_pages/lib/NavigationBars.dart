@@ -1,3 +1,4 @@
+import 'package:demo_pages/bottom_bar_clipper.dart';
 import 'package:flutter/material.dart';
 import 'custom_bottom_nav_bar.dart';
 
@@ -22,15 +23,18 @@ class _NavigationBars extends State<NavigationBars> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 80,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50)
-                )
+            child: ClipPath(
+              clipper: BottomBarClipper(),
+              child: Container(
+                height: 80,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
+                  ),
+                ),
               ),
             ),
           ),
