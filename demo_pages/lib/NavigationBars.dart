@@ -26,6 +26,13 @@ class _NavigationBars extends State<NavigationBars> {
               height: 70,
               color: Colors.black,
               width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50)
+                )
+              ),
+              child: Icon(Icons.abc_outlined),
             ),
           ),
           Positioned(
